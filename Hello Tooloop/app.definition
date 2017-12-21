@@ -1,0 +1,18 @@
+{
+  "name": "Hello Tooloop",
+  "description": "This is an empty presentation template for you to start of your own.",
+  "media": [],
+  "version": "1.0",
+  "last_updated": "2017-12-20",
+  "license": "Beerware",
+  "category": "Examples",
+  "tags": ["example"],
+  "developer": "vollstock",
+  "support_url": "http://www.vollstock.de/",
+  "compatibility": {
+    "s": "True",
+    "m": "True",
+    "l": "True",
+    "xl": "True"
+  }
+}

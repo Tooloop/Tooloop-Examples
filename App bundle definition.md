@@ -1,16 +1,15 @@
-# Tooloop-Examples
-
-Example apps for Tooloop OS
-
-
 # Bundle structure
+
+ZIP file containing:
+
+`APP_NAME-VERSION.zip`
 
 ```
 ./
 |- app.definition
 |- preview_image.jpg (320 × 180 px)
 |- README.md
-|- LICENSE
+|- LICENSE.md
 |
 +- scripts/
 |   |- install.sh
