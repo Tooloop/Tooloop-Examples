@@ -4,11 +4,11 @@
   "media": [],
   "version": "1.0",
   "last_updated": "2017-12-20",
-  "license": "Beerware",
+  "license": "Public domain",
   "category": "Examples",
   "tags": ["example"],
   "developer": "vollstock",
-  "support_url": "http://www.vollstock.de/",
+  "homepage": "http://www.vollstock.de/",
   "compatibility": {
     "s": "True",
     "m": "True",

@@ -1,0 +1,18 @@
+{
+  "name": "Simple Kiosk",
+  "description": "A simple kiosk browser based using chromium.",
+  "media": [],
+  "version": "1.0",
+  "last_updated": "2017-12-21",
+  "license": "Public domain",
+  "category": "Examples",
+  "tags": ["example"],
+  "developer": "vollstock",
+  "homepage": "http://www.vollstock.de/",
+  "compatibility": {
+    "s": "True",
+    "m": "True",
+    "l": "True",
+    "xl": "True"
+  }
+}

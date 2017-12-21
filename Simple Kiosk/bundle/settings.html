@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="settings-table">
+    <tr><td colspan="2"><h2>{{installed_app.name}}</h2></td></tr>
+
+    <tr>
+        <td class="label-column" style="vertical-align: top; padding-top: 1.1em;">Homepage</td>
+        <td class="value-column">
+            <form id="homepage-form">
+                <input type="text" id="homepage-input" value="{{app_controller.homepage}}" style="width: 100%; max-width: 30em;">
+                <p><button type="submit">Save</button></p>
+            </form>
+        </td>
+    </tr>
+</table>
+{% endblock %}
+
+
+{% block page_footer_scripts %}
+<script type="text/javascript">
+
+    $('#homepage-form').on('submit', function(event) {
+        event.preventDefault();
+        
+        $.ajax({
+            method: "POST",
+            data: { "homepage":$('#homepage-input').val() },
+            url: "/simple-kiosk/change-homepage"
+        }).done(function( data ) {
+            $.ajax( {url:"/tooloop/api/v1.0/presentation/reset"} );
+        });
+
+    });
+
+</script>
+{% endblock %}

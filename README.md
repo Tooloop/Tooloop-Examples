@@ -6,29 +6,29 @@ Example apps for Tooloop OS
 # Bundle structure
 
 ```
-./
-|- app.definition
-|- preview_image.jpg (320 × 180 px)
-|- README.md
-|- LICENSE
-|
-+- scripts/
-|   |- install.sh
-|   |- uninstall.sh
-|
-+- presentation/
-|   |- start-presentation.sh
-|   |- stop-presentation.sh
-|   |- ...
-|
-+- data/ (optional)
-|   |- ...
-|
-+- settings/ (optional)
-    |- controller.py
-    |- settings_panel.html
-    |- dashboard_widget.html
+- <APP_NAME>-<VERSION>/
+   |
+   |- README.md (optional)
+   |- LICENSE.md (optional)
+   |
+   +- bundle/
+   |   |- app.definition
+   |   |- preview_image.jpg (320 × 180 px)
+   |   |- install.sh (optional)
+   |   |- uninstall.sh (optional)
+   |   |- controller.py (optional)
+   |   |- settings_panel.html (optional)
+   |   |- dashboard_widget.html (optional)
+   |
+   +- presentation/
+   |   |- start-presentation.sh
+   |   |- stop-presentation.sh
+   |   |- ...
+   |
+   +- data/ (optional)
+   |   |- ...
 ```
+
 
 # App info file
 
@@ -63,7 +63,7 @@ Example apps for Tooloop OS
   "category": "Tools",
   "tags": ["examples"],
   "developer": "Cool dude",
-  "support_url": "http://www.cool-dude.com/awesome-super-trooper/",
+  "homepage": "http://www.cool-dude.com/awesome-super-trooper/",
   "compatibility": {
     "s": "False",
     "m": "True",
