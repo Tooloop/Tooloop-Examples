@@ -17,8 +17,7 @@ Example apps for Tooloop OS
    |   |- install.sh (optional)
    |   |- uninstall.sh (optional)
    |   |- controller.py (optional)
-   |   |- settings_panel.html (optional)
-   |   |- dashboard_widget.html (optional)
+   |   |- settings.html (optional)
    |
    +- presentation/
    |   |- start-presentation.sh
