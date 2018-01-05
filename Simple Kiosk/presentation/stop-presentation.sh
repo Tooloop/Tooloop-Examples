@@ -1,5 +1,5 @@
 #!/bin/bash
 
-killall chromium-browser &
+sudo pkill chromium &
 
 exit 0
