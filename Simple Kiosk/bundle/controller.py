@@ -10,7 +10,7 @@ class InstalledApp(object):
         super(InstalledApp, self).__init__()
 
         # default homepage
-        self.homepage = 'files:///assets/data/index.html';
+        self.homepage = 'file:///assets/data/index.html';
 
         # connect flask routes to tooloop api calls
         self.add_routes(flask)

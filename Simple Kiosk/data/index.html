@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8"> 
     <title>Local kiosk homepage</title>
+
+    <style type="text/css">
+
+        body {
+            margin: 0;
+        }
+
+        #image {
+            background-image: url('kiosk-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #box {
+            width: 50%;
+            position: absolute;
+            background: rgba(255,255,255,0.75);
+            left: 25%;
+            top: 25%;
+            border-radius: 2px;
+            padding: 20px;
+            max-width: 640px;
+            box-sizing: border-box;
+            padding: 50px 40px 50px 40px;
+        }
+        
+        body, div, h1, p {
+            font-family: 'ClearSans', sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+        }
+
+        h1 {
+            font-weight: lighter;
+            color: #b1148e;
+            font-size: 2em;
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-    <h1>Simple kiosk</h1>
+    <div id="image"></div>
+    <div id="box">
+        <h1>Simple Kiosk</h1>
+        <p>This is a simple browser for your show room or trade fair booth.</p>
+        <p>It has very few features but works for simple things.</p>
+        <p>By default it loads <span style="font-family: monospace;">/assets/data/index.html</span> but you can choose any page you like.</p>
+        <p>Simple Kiosk comes with a plugin for the Tooloop Settings Server so you can configure it in there.</p>
+    </div>
 
 </body>
+
 </html>
