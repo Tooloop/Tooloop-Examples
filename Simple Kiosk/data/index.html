@@ -1,29 +1,33 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
+
 <html>
 <head>
-    <meta charset="UTF-8"> 
-    <title>Local kiosk homepage</title>
+    <title>Simple Kiosk</title>
 
     <style type="text/css">
-
-        body {
-            margin: 0;
+        
+        canvas {
+            display: block;
+            vertical-align: bottom;
         }
 
-        #image {
-            background-image: url('kiosk-background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: absolute;
-            height: 100%;
+        #particles {
+            position:absolute;
             width: 100%;
+            height: 100%;
+            background-color: #172e4d;
+            /*background: radial-gradient(ellipse at center, #224a5e 0%,#172e4d 100%);*/
+            background: radial-gradient(ellipse at center, #224a5e 0%,#172e4d 50%,#050b23 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
         }
 
         #box {
             width: 50%;
             position: absolute;
-            background: rgba(255,255,255,0.75);
+            background: rgba(255,255,255,0.9);
             left: 25%;
             top: 25%;
             border-radius: 2px;
@@ -31,12 +35,32 @@
             max-width: 640px;
             box-sizing: border-box;
             padding: 50px 40px 50px 40px;
+            -webkit-user-select: none;  /* Chrome all / Safari all */
+            -moz-user-select: none;     /* Firefox all */
+            -ms-user-select: none;      /* IE 10+ */
+            user-select: none; 
         }
-        
+
+        #credits {
+            color: white;
+            z-index: 999;
+            position: absolute;
+            font-size: 10px;
+            right: 20px;
+            bottom: 20px;
+            font-weight: lighter;
+        }
+
         body, div, h1, p {
+            margin: 0;
             font-family: 'ClearSans', sans-serif;
             font-weight: 100;
             font-size: 18px;
+            line-height: 1.25em;
+        }
+
+        h1, p {
+            margin: 0 0 1em 0;
         }
 
         h1 {
@@ -45,13 +69,18 @@
             font-size: 2em;
         }
 
+        a, a:visited, a:active {
+            color: #b1148e;
+        }
+
     </style>
 
 </head>
 
 <body>
 
-    <div id="image"></div>
+    <div id="particles"></div>
+
     <div id="box">
         <h1>Simple Kiosk</h1>
         <p>This is a simple browser for your show room or trade fair booth.</p>
@@ -60,6 +89,129 @@
         <p>Simple Kiosk comes with a plugin for the Tooloop Settings Server so you can configure it in there.</p>
     </div>
 
-</body>
+    <div id="credits"><a href="http://vincentgarreau.com/particles.js/">particles.js</a> by Vincent Garreau</div>
 
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="particles.min.js"></script>
+
+    <script type="text/javascript">
+        
+        particlesJS("particles", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 1000
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "polygon",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 8
+                    },
+                    // "image": {
+                    //     "src": "img/github.svg",
+                    //     "width": 100,
+                    //     "height": 100
+                    // }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 2,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1.5
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 3
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        var update = function() {
+            requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);;
+
+    </script>
+
+</body>
 </html>
