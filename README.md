@@ -12,7 +12,7 @@ Example apps for Tooloop OS
    |- LICENSE.md (optional)
    |
    +- bundle/
-   |   |- app.definition
+   |   |- app.json
    |   |- preview_image.jpg (320 × 180 px)
    |   |- install.sh (optional)
    |   |- uninstall.sh (optional)
@@ -31,7 +31,7 @@ Example apps for Tooloop OS
 
 # App info file
 
-`app.definition`
+`app.json`
 
 ```
 {
