@@ -9,8 +9,8 @@
         <td class="label-column" style="vertical-align: top; padding-top: 1.1em;">Homepage</td>
         <td class="value-column">
             <form id="homepage-form">
-                <input type="text" id="homepage-input" value="{{app_controller.homepage}}" style="width: calc(100% - 1em); max-width: 30em;">
-                <p><button type="submit">Save</button></p>
+                <input type="text" id="homepage-input" value="{{app_controller.homepage}}" style="width: calc(100% - 1em); max-width: 30em;"><br/><br/>
+                <button type="submit">Save</button>
             </form>
         </td>
     </tr>
@@ -23,13 +23,18 @@
 
     $('#homepage-form').on('submit', function(event) {
         event.preventDefault();
+
+        var feedback = attachFeedback(event.target);
         
         $.ajax({
             method: "POST",
             data: { "homepage":$('#homepage-input').val() },
             url: "/simple-kiosk/change-homepage"
         }).done(function( data ) {
+            displayConfirmFeedback(feedback, 'Saved');
             $.ajax( {url:"/tooloop/api/v1.0/presentation/reset"} );
+        }).error(function( jqXHR, textStatus, errorThrown ) {
+            displayErrorFeedback(feedback, errorThrown);
         });
 
     });
