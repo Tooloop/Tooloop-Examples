@@ -1,0 +1,18 @@
+{
+  "name": "Image Slideshow",
+  "description": "A browser base image slideshow.",
+  "media": [],
+  "version": "1.0",
+  "last_updated": "2018-02-20",
+  "license": "Public domain",
+  "category": "Examples",
+  "tags": ["example"],
+  "developer": "vollstock",
+  "homepage": "http://www.vollstock.de/",
+  "compatibility": {
+    "s": "True",
+    "m": "True",
+    "l": "True",
+    "xl": "True"
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Slideshow</title>
+  <style media="screen">
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      height: 100%;
+      width: 100%;
+      position:absolute;
+      z-index:1;
+
+      background-size: cover;
+      background-position: center center;
+    }
+    div.active{
+      z-index:3
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="slideshow">
+    <div style="background-image: url(/assets/data/image1.jpg)" class="active"></div>
+    <div style="background-image: url(/assets/data/image2.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image3.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image4.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image5.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image6.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image7.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image8.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image9.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image10.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image11.jpg)" ></div>
+    <div style="background-image: url(/assets/data/image12.jpg)" ></div>
+  </div>
+
+  <script type='application/javascript' src='jquery-3.1.1.min.js'></script>
+  <script type="text/javascript">
+
+    function nextImage() {
+      var $active = $('#slideshow .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#slideshow div:first');
+
+      $next.css('z-index', 2); // move the next image up the pile
+
+      $active.fadeOut(500, function() { // fade out the top image
+        $active.css('z-index',1).show().removeClass('active'); // reset the z-index and unhide the image
+        $next.css('z-index',3).addClass('active'); // make the next image the top one
+      });
+    }
+
+    $(document).ready(function(){
+      setInterval('nextImage()', 7000);
+    })
+
+  </script>
+
+</body>
+
+</html>
