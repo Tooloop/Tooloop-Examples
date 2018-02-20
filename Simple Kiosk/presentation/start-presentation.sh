@@ -1,10 +1,9 @@
 #!/bin/bash
-URL="file:///assets/data/index.html"
 
-if [ $EUID == 0 ]; then
-    su tooloop -c "chromium-browser --noerrdialogs --kiosk --incognito $URL" &
-else
-    chromium-browser --noerrdialogs --kiosk --incognito $URL &
-fi
+IDLETIME=60
+RESET_COMMAND="/bin/bash /assets/presentation/reset-kiosk.sh"
+
+$RESET_COMMAND
+xidlerun -t $IDLETIME -c "$RESET_COMMAND" &
 
 exit 0

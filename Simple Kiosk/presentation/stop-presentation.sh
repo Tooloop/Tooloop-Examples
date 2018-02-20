@@ -1,5 +1,6 @@
 #!/bin/bash
 
-sudo pkill chromium &
+pkill xidlerun &
+pkill chromium &
 
 exit 0

@@ -27,15 +27,21 @@ class InstalledApp(object):
             try:
                 self.homepage = request.form['homepage'];
 
-                file = open('/assets/presentation/start-presentation.sh','w') 
+                file = open('/assets/presentation/reset-kiosk.sh','w') 
 
                 file.write('#!/bin/bash\n')
                 file.write('\n')
                 file.write('URL="'+self.homepage+'"\n')
+                file.write('COMMAND="chromium-browser --noerrdialogs --kiosk --incognito $URL"\n')
+                file.write('\n')
                 file.write('if [ $EUID == 0 ]; then\n')
-                file.write('    su tooloop -c "chromium-browser --noerrdialogs --kiosk --incognito $URL" &\n')
+                file.write('    pkill chromium\n')
+                file.write('    sleep 0.1\n')
+                file.write('    su tooloop -c "$COMMAND" &\n')
                 file.write('else\n')
-                file.write('    chromium-browser --noerrdialogs --kiosk --incognito $URL &\n')
+                file.write('    pkill chromium\n')
+                file.write('    sleep 0.1\n')
+                file.write('    $COMMAND &\n')
                 file.write('fi\n')
                 file.write('\n')
                 file.write('exit 0\n')
@@ -44,7 +50,7 @@ class InstalledApp(object):
             
                 uid = getpwnam('tooloop').pw_uid
                 gid = getgrnam('tooloop').gr_gid
-                chown('/assets/presentation/start-presentation.sh', uid, gid)
+                chown('/assets/presentation/reset-kiosk.sh', uid, gid)
 
                 return jsonify({'message':'homepage changed'})
 
