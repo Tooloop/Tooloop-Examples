@@ -1,0 +1,18 @@
+{
+  "name": "Simple Video Player",
+  "description": "Uses [mplayer](http://mplayerhq.hu) to play and loop a list of videos in fullscreen.",
+  "media": [],
+  "version": "1.0",
+  "last_updated": "2018-02-13",
+  "license": "Public domain",
+  "category": "Examples",
+  "tags": ["example"],
+  "developer": "vollstock",
+  "homepage": "http://www.vollstock.de/",
+  "compatibility": {
+    "s": "False",
+    "m": "True",
+    "l": "True",
+    "xl": "True"
+  }
+}
