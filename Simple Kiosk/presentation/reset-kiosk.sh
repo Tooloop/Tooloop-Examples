@@ -1,7 +1,10 @@
 #!/bin/bash
 
 URL="file:///assets/data/index.html"
-COMMAND="chromium-browser --noerrdialogs --kiosk --incognito $URL"
+
+# List of Chromium Command Line Switches
+# https://peter.sh/experiments/chromium-command-line-switches/
+COMMAND="chromium-browser --kiosk --bwsi --incognito --class=TooloopKiosk --disable-infobars --no-default-browser-check --no-first-run --noerrdialogs $URL"
 
 if [ $EUID == 0 ]; then
     pkill chromium

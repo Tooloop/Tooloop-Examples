@@ -32,7 +32,10 @@ class InstalledApp(object):
                 file.write('#!/bin/bash\n')
                 file.write('\n')
                 file.write('URL="'+self.homepage+'"\n')
-                file.write('COMMAND="chromium-browser --noerrdialogs --kiosk --incognito $URL"\n')
+                file.write('\n')
+                file.write('# List of Chromium Command Line Switches\n')
+                file.write('# https://peter.sh/experiments/chromium-command-line-switches/\n')
+                file.write('COMMAND="chromium-browser --kiosk --bwsi --incognito --class=TooloopKiosk --disable-infobars --no-default-browser-check --no-first-run --noerrdialogs $URL"\n')
                 file.write('\n')
                 file.write('if [ $EUID == 0 ]; then\n')
                 file.write('    pkill chromium\n')
@@ -45,7 +48,7 @@ class InstalledApp(object):
                 file.write('fi\n')
                 file.write('\n')
                 file.write('exit 0\n')
-            
+
                 file.close() 
             
                 uid = getpwnam('tooloop').pw_uid
